@@ -2,37 +2,24 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "my-element",
-      "path": "./src/my-element.ts",
+      "name": "content-visibility",
+      "path": "./src/content-visibility.ts",
       "description": "An example element.",
       "attributes": [
         {
-          "name": "name",
-          "description": "The name to say \"Hello\" to.",
+          "name": "containIntrinsicSize",
+          "description": "CSS contain-intrinsic-size\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/contain-intrinsic-size",
           "type": "string",
-          "default": "\"World\""
-        },
-        {
-          "name": "count",
-          "description": "The number of times the button has been clicked.",
-          "type": "number",
-          "default": "0"
+          "default": "\"\""
         }
       ],
       "properties": [
         {
-          "name": "name",
-          "attribute": "name",
-          "description": "The name to say \"Hello\" to.",
+          "name": "containIntrinsicSize",
+          "attribute": "containIntrinsicSize",
+          "description": "CSS contain-intrinsic-size\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/contain-intrinsic-size",
           "type": "string",
-          "default": "\"World\""
-        },
-        {
-          "name": "count",
-          "attribute": "count",
-          "description": "The number of times the button has been clicked.",
-          "type": "number",
-          "default": "0"
+          "default": "\"\""
         }
       ],
       "slots": [

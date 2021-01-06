@@ -1,20 +1,28 @@
 <!doctype html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>&lt;my-element> Demo</title>
-    <script type="module" src="../my-element.js"></script>
-    <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
-      }
-    </style>
-  </head>
-  <body>
-    <my-element>
-      <p>This is child content</p>
-    </my-element>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>&lt;content-visibility> Demo</title>
+  <script type="module" src="../content-visibility.js"></script>
+  <style>
+    div.box {
+      height: 1200px;
+      border: solid 1px blue;
+      padding: 8px;
+    }
+
+    div.box img {
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <content-visibility>
+    <div class="box">This is child element</div>
+  </content-visibility>
+</body>
+
 </html>

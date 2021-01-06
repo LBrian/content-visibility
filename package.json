@@ -1,14 +1,14 @@
 {
-  "name": "lit-element-starter-ts",
-  "version": "0.0.0",
-  "description": "A simple web component",
-  "main": "my-element.js",
-  "module": "my-element.js",
+  "name": "content-visibility",
+  "version": "1.0.0",
+  "description": "A web component leverages CSS content-visibility and the Intersection Observer API to provide cross browsers content-visibility solution",
+  "main": "content-visibility.js",
+  "module": "content-visibility.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "clean": "rimraf my-element.{d.ts,d.ts.map,js,js.map} test/my-element.{d.ts,d.ts.map,js,js.map} test/my-element_test.{d.ts,d.ts.map,js,js.map}",
+    "clean": "rimraf content-visibility.{d.ts,d.ts.map,js,js.map} test/content-visibility.{d.ts,d.ts.map,js,js.map} test/content-visibility_test.{d.ts,d.ts.map,js,js.map}",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
     "lint:lit-analyzer": "lit-analyzer",
@@ -17,7 +17,7 @@
     "docs:clean": "rimraf docs",
     "docs:gen": "eleventy --config=.eleventy.cjs",
     "docs:gen:watch": "eleventy --config=.eleventy.cjs --watch",
-    "docs:build": "rollup -c --file docs/my-element.bundled.js",
+    "docs:build": "rollup -c --file docs/content-visibility.bundled.js",
     "docs:assets": "cp node_modules/prismjs/themes/prism-okaidia.css docs/",
     "docs:serve": "es-dev-server --root-dir=docs --node-resolve --watch",
     "analyze": "wca analyze \"src/**/*.ts\" --outFile custom-elements.json",
@@ -26,16 +26,22 @@
     "test:watch": "karma start karma.conf.cjs --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start karma.conf.cjs --update-snapshots",
     "test:prune-snapshots": "karma start karma.conf.cjs --prune-snapshots",
-    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js"
+    "checksize": "rollup -c ; cat content-visibility.bundled.js | gzip -9 | wc -c ; rm content-visibility.bundled.js",
+    "dev": "concurrently \"npm run build:watch\" \"npm run serve\""
   },
   "keywords": [
     "web-components",
     "lit-element",
     "typescript"
   ],
-  "author": "The Polymer Authors",
-  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Brian YP Liu",
+    "email": "ralphbliu@gmail.com",
+    "url": "https://brianypliu.com/"
+  },
+  "license": "MIT",
   "dependencies": {
+    "intersection-observer": "^0.7.0",
     "lit-element": "^2.3.1"
   },
   "devDependencies": {
@@ -49,6 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "chai": "^4.2.0",
+    "concurrently": "^5.3.0",
     "deepmerge": "^4.2.2",
     "es-dev-server": "^1.46.1",
     "eslint": "^6.8.0",
@@ -65,5 +72,16 @@
     "rollup-plugin-terser": "^5.3.0",
     "typescript": "^3.8.3",
     "web-component-analyzer": "^1.0.3"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LBrian/content-visibility.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LBrian/content-visibility/issues"
+  },
+  "homepage": "https://github.com/LBrian/content-visibility#readme"
 }

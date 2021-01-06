@@ -1,16 +1,16 @@
-import {MyElement} from '../my-element.js';
+import {ContentVisibility} from '../content-visibility.js';
 import {fixture, html} from '@open-wc/testing';
 
 const assert = chai.assert;
 
-suite('my-element', () => {
+suite('content-visibility', () => {
   test('is defined', () => {
-    const el = document.createElement('my-element');
-    assert.instanceOf(el, MyElement);
+    const el = document.createElement('content-visibility');
+    assert.instanceOf(el, ContentVisibility);
   });
 
   test('renders with default values', async () => {
-    const el = await fixture(html`<my-element></my-element>`);
+    const el = await fixture(html`<content-visibility></content-visibility>`);
     assert.shadowDom.equal(
       el,
       `
@@ -22,7 +22,9 @@ suite('my-element', () => {
   });
 
   test('renders with a set name', async () => {
-    const el = await fixture(html`<my-element name="Test"></my-element>`);
+    const el = await fixture(
+      html`<content-visibility name="Test"></content-visibility>`
+    );
     assert.shadowDom.equal(
       el,
       `
@@ -34,7 +36,9 @@ suite('my-element', () => {
   });
 
   test('handles a click', async () => {
-    const el = (await fixture(html`<my-element></my-element>`)) as MyElement;
+    const el = (await fixture(
+      html`<content-visibility></content-visibility>`
+    )) as ContentVisibility;
     const button = el.shadowRoot!.querySelector('button')!;
     button.click();
     await el.updateComplete;
