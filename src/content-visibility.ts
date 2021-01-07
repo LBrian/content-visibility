@@ -1,4 +1,5 @@
 import 'intersection-observer';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 import {
   css,
   html,
@@ -121,5 +122,15 @@ export class ContentVisibility extends LitElement {
 declare global {
   interface HTMLElementTagNameMap {
     'content-visibility': ContentVisibility;
+  }
+  // React/Preact IntrinsicElements types
+  namespace JSX {
+    interface IntrinsicElements {
+      'content-visibility': HTMLAttributes<HTMLDivElement> &
+        PropsWithChildren<{
+          containIntrinsicSize?: string;
+          threshold?: number;
+        }>;
+    }
   }
 }
