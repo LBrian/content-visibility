@@ -12,7 +12,12 @@ CSS `content-visibility` is supported on Chrome 85+, Chrome Android 85+ and Oper
 
 # What it does
 
-Basically, all children inside `<content-visibility>...</<content-visibility>` will only be renderred when it appears on viewport.
+Basically, all children inside it will only be renderred after it appears on viewport.
+```jsx
+<content-visibility>
+  here will be hidden if outside viewport
+</content-visibility>
+```
 
 # Performance comparison
 
@@ -60,7 +65,7 @@ CSS `content-visibility` and `contain-intrinsic-size`
 
 ## Use in JSX (React/Preact)
 
-```
+```jsx
 import 'content-visibility';
 
 const Content = () => {
