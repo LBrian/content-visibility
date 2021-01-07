@@ -7,5 +7,5 @@ test/
 .*
 karma.conf.cjs
 rollup.config.js
-tsconfig.js
+tsconfig.json
 custom-elements.json
