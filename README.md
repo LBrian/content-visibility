@@ -1,6 +1,10 @@
 # content-visibility
 
-`<content-visibility></content-visibility>` is a simple web component encapsulates modern CSS properties `content-visibility` and `contain-intrinsic-size` and Web API **Intersection Observer API** to provide cross-browsers support ability to prevent `children` rendering when outside viewport which boosts page performance.
+![npm 7.0.15](https://img.shields.io/badge/npm-7.0.15-blue)
+![Typescript](https://img.shields.io/badge/typescript-4.1.3-blue)
+![Lit-Element](https://img.shields.io/badge/LitElement-2.3.1-blue)
+
+`<content-visibility>` is a simple web component encapsulates modern CSS properties `content-visibility` and `contain-intrinsic-size` and Web API **Intersection Observer API** to provide cross-browsers support ability to prevent `children` rendering when outside viewport which boosts page performance.
 
 CSS `content-visibility` is supported on Chrome 85+, Chrome Android 85+ and Opera 71+ but not Firefox, Safari and IE unfortunately, for more details see [Google web.dev](https://web.dev/content-visibility/)
 
@@ -24,7 +28,8 @@ CSS `content-visibility` and `contain-intrinsic-size`
 
 ### After
 
-**Rendering** and **Painting** time reduced around `50%`
+**Rendering** and **Painting** time reduced around `50%`.
+
 ![Chrome After](./images/chrome-after.png?raw=true)
 
 ## Safari 14.0.1
