@@ -1,0 +1,11 @@
+dev/
+docs-src/
+images/
+node_modules/
+src/
+test/
+.*
+karma.conf.cjs
+rollup.config.js
+tsconfig.js
+custom-elements.json
