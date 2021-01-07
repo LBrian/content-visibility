@@ -11,6 +11,7 @@ CSS `content-visibility` is supported on Chrome 85+, Chrome Android 85+ and Oper
 **Intersection Observer API** supports pretty much all browsers except **IE**, thus an intersection observer polyfill is included. [IntersectionObserver polyfill](https://www.npmjs.com/package/intersection-observer)
 
 # Compatibility
+
 <table>
   <tr>
     <td valign="top"><img src="./images/chrome_128x128.png" alt="Chrome" widht="30" height="30"></td>
@@ -28,7 +29,7 @@ Basically, all children inside it will only be renderred after it appears on vie
 
 ```html
 <content-visibility>
-  {children will be hidden when outside viewport}
+  {children will not be rendered when outside the first viewport}
 </content-visibility>
 ```
 
