@@ -4,13 +4,19 @@
     {
       "name": "content-visibility",
       "path": "./src/content-visibility.ts",
-      "description": "An example element.",
+      "description": "content-visibility, a web component leverages CSS content-visibility and the\nIntersection Observer API to provide cross browsers content-visibility solution.",
       "attributes": [
         {
           "name": "containIntrinsicSize",
           "description": "CSS contain-intrinsic-size\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/contain-intrinsic-size",
           "type": "string",
           "default": "\"\""
+        },
+        {
+          "name": "threshold",
+          "description": "Intersection Observer API option threshold. Since content-visibility only\ntriggers once, thus no use cases will need to provide array of threshold.\nhttps://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+          "type": "number",
+          "default": "0"
         }
       ],
       "properties": [
@@ -20,18 +26,13 @@
           "description": "CSS contain-intrinsic-size\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/contain-intrinsic-size",
           "type": "string",
           "default": "\"\""
-        }
-      ],
-      "slots": [
+        },
         {
-          "name": "",
-          "description": "This element has a slot"
-        }
-      ],
-      "cssParts": [
-        {
-          "name": "button",
-          "description": "The button"
+          "name": "threshold",
+          "attribute": "threshold",
+          "description": "Intersection Observer API option threshold. Since content-visibility only\ntriggers once, thus no use cases will need to provide array of threshold.\nhttps://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API",
+          "type": "number",
+          "default": "0"
         }
       ]
     }

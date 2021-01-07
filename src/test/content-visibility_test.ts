@@ -1,5 +1,5 @@
-import {ContentVisibility} from '../content-visibility.js';
-import {fixture, html} from '@open-wc/testing';
+import { ContentVisibility } from '../content-visibility.js';
+import { fixture, html } from '@open-wc/testing';
 
 const assert = chai.assert;
 
@@ -14,41 +14,31 @@ suite('content-visibility', () => {
     assert.shadowDom.equal(
       el,
       `
-      <h1>Hello, World!</h1>
-      <button part="button">Click Count: 0</button>
-      <slot></slot>
+      <div style="" class="content-visibility">
+        <slot></slot>
+      </div>
     `
     );
   });
 
-  test('renders with a set name', async () => {
+  test('renders with contain-intrinsic-size', async () => {
     const el = await fixture(
-      html`<content-visibility name="Test"></content-visibility>`
+      html`<content-visibility
+        containIntrinsicSize="500px"
+      ></content-visibility>`
     );
-    assert.shadowDom.equal(
-      el,
-      `
-      <h1>Hello, Test!</h1>
-      <button part="button">Click Count: 0</button>
-      <slot></slot>
-    `
-    );
-  });
 
-  test('handles a click', async () => {
-    const el = (await fixture(
-      html`<content-visibility></content-visibility>`
-    )) as ContentVisibility;
-    const button = el.shadowRoot!.querySelector('button')!;
-    button.click();
-    await el.updateComplete;
     assert.shadowDom.equal(
       el,
       `
-      <h1>Hello, World!</h1>
-      <button part="button">Click Count: 1</button>
-      <slot></slot>
+      <div style="--contain-intrinsic-size: 500px" class="content-visibility">
+        <slot></slot>
+      </div>
     `
+    );
+    assert.equal(
+      el.shadowRoot?.children[0].getBoundingClientRect().height,
+      500
     );
   });
 });

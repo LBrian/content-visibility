@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html>
 
 <head>
@@ -7,22 +6,718 @@
   <title>&lt;content-visibility> Demo</title>
   <script type="module" src="../content-visibility.js"></script>
   <style>
-    div.box {
-      height: 1200px;
-      border: solid 1px blue;
-      padding: 8px;
+    html {
+      font-size: 20px;
     }
 
-    div.box img {
-      object-fit: contain;
+    body {
+      background: #fdfbf5;
+      margin: 0 auto;
+      padding: 0 2rem;
+      font-family: 'system-ui', sans-serif;
+      box-sizing: border-box;
+      max-width: 1000px;
+      line-height: 1.4;
+    }
+
+    blockquote {
+      padding: 2rem;
+      border: 3px double hotpink;
+    }
+
+    p {
+      max-width: 52ch;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.75rem;
+    }
+
+    a {
+      color: mediumvioletred;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    figure {
+      width: 100%;
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    ul {
+      list-style: circle;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .grid-2 figcaption {
+      float: none;
+      margin: -1rem auto 1rem;
+    }
+
+    .leading {
+      font-size: 120%;
+    }
+
+    .leading::first-letter {
+      font-size: 150%;
+      font-weight: 800;
+    }
+
+    .hero {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    .hero figcaption {
+      margin: -1rem auto 0;
+    }
+
+    figcaption {
+      font-size: 80%;
+      background: mistyrose;
+      padding: 1rem;
+      margin: -1rem 0 1rem -1rem;
+      z-index: 1;
+      position: relative;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    figure+figure figcaption {
+      float: right;
+      margin: -1rem -1rem 1rem 0;
+    }
+
+    figure img:not(.hero) {
+      background: pink;
+    }
+
+    footer {
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+      color: gray;
+    }
+
+    .p-group-flex {
+      display: flex;
+    }
+
+    .p-group-flex p {
+      margin: 1rem;
     }
   </style>
 </head>
 
 <body>
-  <content-visibility>
-    <div class="box">This is child element</div>
-  </content-visibility>
+  <nav>
+    <a href="#">My Travel Site</a>
+    <ul class="grid-3">
+      <li>Home</li>
+      <li>About</li>
+      <li>Archive</li>
+    </ul>
+  </nav>
+  <article>
+    <h1>The Ultimate Weekend Road Trip Guide</h1>
+
+    <content-visibility>
+      <figure class="hero">
+        <img src="https://source.unsplash.com/1600x980" alt="">
+        <figcaption>This Demo Uses Images from the <a href="https://unsplash.com">Unsplash</a> API.</figcaption>
+      </figure>
+    </content-visibility>
+
+    <p class="leading">Atque similique quia eos cupiditate, repellat quibusdam rerum, facilis quisquam eius beatae
+      omnis excepturi. Sint, qui doloremque sit voluptate quis voluptatum, distinctio sunt eaque voluptas placeat
+      praesentium amet error nostrum!</p>
+
+    <blockquote>Harum quo <i>distinctio facilis</i> dolorem. Consectetur iste repellendus impedit</blockquote>
+
+    <p>Harum quo distinctio facilis dolorem. Consectetur iste repellendus impedit, odio, corrupti aliquid officia
+      molestiae hic mollitia, omnis aperiam quos enim alias doloribus sint libero ipsa numquam reprehenderit
+      laudantium voluptatibus voluptates!</p <figure>
+    <img src="https://source.unsplash.com/random/1600x920" alt="">
+    <figcaption><a href="#">Lorem ipsum</a> dolor sit amet consectetur, adipisicing elit. Doloremque, praesentium.
+    </figcaption>
+    </figure>
+
+    <h2>Make sure you're stocked up on snacks</h2>
+
+    <div class="grid-3">
+      <figure>
+        <img src="https://source.unsplash.com/random/410" alt="">
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/random/411" alt="">
+      </figure>
+      <figure>
+        <img src="https://source.unsplash.com/random/430" alt="">
+      </figure>
+    </div>
+
+    <p>Atque similique quia eos cupiditate, repellat quibusdam rerum, facilis quisquam eius beatae omnis excepturi.
+      <i>Sint, qui doloremque sit voluptate quis voluptatum</i>, distinctio sunt eaque voluptas placeat praesentium
+      amet error nostrum!
+    </p>
+
+    <p>Ex provident eos expedita odio quas, et rem nemo voluptatibus necessitatibus ab, voluptatum nam nesciunt
+      impedit sint repellendus, dolorem cumque vero! Ipsa minus perspiciatis dolores! Magnam assumenda quidem itaque
+      totam?</p>
+
+    <ul>
+      <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+      <li>Aut expedita magni, provident tenetur non voluptatem culpa nesciunt deleniti dolor amet ducimus a quis
+        veniam nisi odit ex cupiditate sunt.</li>
+      <li>Fugit illo illum sapiente neque id soluta sunt error harum nulla qui blanditiis, nemo perspiciatis nesciunt,
+        voluptate voluptates excepturi ipsa sequi vero vitae.</li>
+      <li>Debitis aperiam ipsa hic quibusdam animi ipsum.</li>
+    </ul>
+
+    <p><a href="#">Atque similique</a> quia eos cupiditate, repellat quibusdam rerum, facilis quisquam eius beatae
+      omnis excepturi. Sint, qui doloremque sit voluptate quis voluptatum, distinctio sunt eaque voluptas placeat
+      praesentium amet error nostrum!</p>
+
+    <content-visibility>
+      <div class="grid-2">
+        <figure>
+          <img src="https://source.unsplash.com/random/620" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/610" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+      </div>
+    </content-visibility>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/800x400" alt="">
+      <figcaption>Facilis nesciunt perferendis porro incidunt, <a href="#">doloremque debitis</a> deleniti blanditiis
+        eum ab fuga magnam asperiores provident.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1600x900">
+      <figcaption>Perspiciatis modi reprehenderit quisquam suscipit ipsum totam labore, voluptatibus illum adipisci
+        inventore quos dolorum velit!</figcaption>
+    </figure>
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam modi tempora perferendis. Repellendus, facere
+      accusamus. Distinctio, sit! Cupiditate voluptatibus at id eos nulla consequuntur, dicta animi aut, reiciendis
+      minus hic?</p>
+
+    <h2>Don't forget to plan your stay</h2>
+
+    <p>Quo sed quis <a href="#">fuga atque</a> aliquid iste optio sunt voluptatum, laudantium enim dicta explicabo
+      animi ipsa necessitatibus itaque hic ab rem dolor temporibus harum iure? Itaque minima quos architecto quia.
+      Velit soluta error, fugiat placeat deleniti tempore voluptatum consectetur repudiandae. Sit sed nihil numquam
+      itaque facere labore earum neque, officia reiciendis non ea deserunt magnam tenetur! Magnam officiis vitae
+      quidem?</p>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1200x800" alt="">
+      <figcaption>Sunt dignissimos impedit corrupti aliquam adipisci quisquam est reprehenderit illum aspernatur
+        alias, commodi neque ipsam eveniet odio amet nemo harum hic voluptatem optio quod culpa. Fugiat totam eaque
+        excepturi amet.
+      </figcaption>
+    </figure>
+
+    <blockquote>Minus accusamus explicabo voluptatum at exercitationem aliquam aspernatur odit corrupti!</blockquote>
+
+    <p>Velit ipsum eum quos? Voluptatum, quidem veniam repellat rerum impedit ducimus! <b>Provident perferendis</b>,
+      nostrum dolorum nesciunt earum amet dicta repellat ad vitae, laudantium iste assumenda fuga mollitia nobis,
+      consequatur adipisci?</p>
+
+    <content-visibility>
+      <div class="p-group-flex">
+        <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, facere ratione ipsum id
+          cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+          inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus
+          ea totam?</p>
+      </div>
+    </content-visibility>
+    <p>Velit ipsum eum quos? Voluptatum, quidem veniam repellat rerum impedit ducimus! <b>Provident perferendis</b>,
+      nostrum dolorum nesciunt earum amet dicta repellat ad vitae, laudantium iste assumenda fuga mollitia nobis,
+      consequatur adipisci?</p>
+
+    <content-visibility>
+      <div class="grid-3">
+        <figure>
+          <img src="https://source.unsplash.com/random/650" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/400" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/350" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/700" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/600" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/550" alt="">
+        </figure>
+      </div>
+    </content-visibility>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1200x600" alt="">
+      <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+        magnam asperiores provident.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1200x700" alt="">
+      <figcaption>Perspiciatis modi reprehenderit quisquam suscipit ipsum totam labore, voluptatibus illum adipisci
+        inventore quos dolorum velit!</figcaption>
+    </figure>
+
+    <p>Atque similique quia eos cupiditate, repellat quibusdam rerum, facilis quisquam eius beatae omnis excepturi.
+      Sint, qui doloremque sit voluptate quis voluptatum, distinctio sunt eaque voluptas placeat praesentium amet
+      error nostrum!</p>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis inventore, eum
+      quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea totam?</p>
+
+    <h2>Choose your travel partners wisely</h2>
+
+    <content-visibility>
+      <div class="grid-2">
+        <figure>
+          <img src="https://source.unsplash.com/random/670" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/600" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+      </div>
+    </content-visibility>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.
+      Temporibus, eum!</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+      inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
+      totam?</p>
+
+    <content-visibility>
+      <div class="grid-3">
+        <figure>
+          <img src="https://source.unsplash.com/random/300" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/301" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/302" alt="">
+        </figure>
+      </div>
+    </content-visibility>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1600x910" alt="">
+      <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+        magnam asperiores provident.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1600x940" alt="">
+      <figcaption>Perspiciatis modi reprehenderit quisquam suscipit ipsum totam labore, voluptatibus illum adipisci
+        inventore quos dolorum velit!</figcaption>
+    </figure>
+
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.
+      Temporibus, eum!</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+      inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
+      totam?</p>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis inventore, eum
+      quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea totam?</p>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1200x700" alt="">
+      <figcaption><a href="#">Lorem ipsum</a> dolor sit amet consectetur, adipisicing elit. Doloremque, praesentium.
+      </figcaption>
+    </figure>
+
+    <content-visibility>
+      <div class="grid-3">
+        <figure>
+          <img src="https://source.unsplash.com/random/650" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/680" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/690" alt="">
+        </figure>
+      </div>
+    </content-visibility>
+
+
+    <p>Perferendis accusamus asperiores nihil repudiandae, dignissimos sint natus, cumque consectetur maxime ducimus
+      voluptates, nesciunt repellat! Rerum in totam voluptatibus quidem numquam perspiciatis fugiat delectus
+      laboriosam praesentium explicabo, officiis, magnam perferendis?</p>
+
+    <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, nemo veritatis.</blockquote>
+
+    <h2>Don't forget to take photos!</h2>
+
+    <p>Corporis deleniti consequuntur corrupti dolor sit tempora assumenda, quia quos modi aliquam, ex exercitationem
+      asperiores est magni iste repellendus voluptatibus, alias maxime? Amet nostrum voluptates nam odio eius
+      reprehenderit accusantium!</p>
+
+    <content-visibility>
+      <div class="grid-2">
+        <figure>
+          <img src="https://source.unsplash.com/random/530" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/535" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+      </div>
+    </content-visibility>
+
+    <content-visibility>
+      <div class="p-group-flex">
+
+        <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere
+          ratione ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident
+          beatae. Temporibus, eum!</p>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+          inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus
+          ea totam?</p>
+      </div>
+    </content-visibility>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1600x950" alt="">
+      <figcaption><a href="#">Lorem ipsum</a> dolor sit amet consectetur, adipisicing elit. Doloremque, praesentium.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1200x600" alt="">
+      <figcaption>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <a href="#">Doloremque</a>, praesentium.
+      </figcaption>
+    </figure>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.</p>
+
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+      inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
+      totam?</p>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1600x900" alt="">
+      <figcaption><a href="#">Lorem ipsum</a> dolor sit amet consectetur, adipisicing elit. Doloremque, praesentium.
+      </figcaption>
+    </figure>
+    <content-visibility>
+      <div class="grid-3">
+        <figure>
+          <img src="https://source.unsplash.com/random/450" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/450" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/450" alt="">
+        </figure>
+      </div>
+    </content-visibility>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+      inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
+      totam?</p>
+
+    <content-visibility>
+      <div class="p-group-flex">
+        <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, facere ratione ipsum id
+          cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+          inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus
+          ea totam?</p>
+      </div>
+    </content-visibility>
+
+    <p>Velit ipsum eum quos? Voluptatum, quidem veniam repellat rerum impedit ducimus! <b>Provident perferendis</b>,
+      nostrum dolorum nesciunt earum amet dicta repellat ad vitae, laudantium iste assumenda fuga mollitia nobis,
+      consequatur adipisci?</p>
+
+    <content-visibility>
+      <div class="grid-3">
+        <figure>
+          <img src="https://source.unsplash.com/random/650" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/400" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/350" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/700" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/600" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/550" alt="">
+        </figure>
+      </div>
+    </content-visibility>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1200x700" alt="">
+      <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+        magnam asperiores provident.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1200x700" alt="">
+      <figcaption>Perspiciatis modi reprehenderit quisquam suscipit ipsum totam labore, voluptatibus illum adipisci
+        inventore quos dolorum velit!</figcaption>
+    </figure>
+
+    <p>Atque similique quia eos cupiditate, repellat quibusdam rerum, facilis quisquam eius beatae omnis excepturi.
+      Sint, qui doloremque sit voluptate quis voluptatum, distinctio sunt eaque voluptas placeat praesentium amet
+      error nostrum!</p>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis inventore, eum
+      quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea totam?</p>
+
+    <content-visibility>
+      <div class="grid-2">
+        <figure>
+          <img src="https://source.unsplash.com/random/621" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/620" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+      </div>
+    </content-visibility>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.
+      Temporibus, eum!</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+      inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
+      totam?</p>
+
+    <content-visibility>
+      <div class="grid-3">
+        <figure>
+          <img src="https://source.unsplash.com/random/611" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/609" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/610" alt="">
+        </figure>
+      </div>
+    </content-visibility>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1620x910" alt="">
+      <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+        magnam asperiores provident.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1610x940" alt="">
+      <figcaption>Perspiciatis modi reprehenderit quisquam suscipit ipsum totam labore, voluptatibus illum adipisci
+        inventore quos dolorum velit!</figcaption>
+    </figure>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.
+      Temporibus, eum!</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+      inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
+      totam?</p>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae. Lorem
+      ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis inventore, eum
+      quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea totam?</p>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1240x700" alt="">
+      <figcaption><a href="#">Lorem ipsum</a> dolor sit amet consectetur, adipisicing elit. Doloremque, praesentium.
+      </figcaption>
+    </figure>
+
+    <content-visibility>
+      <div class="grid-3">
+        <figure>
+          <img src="https://source.unsplash.com/random/689" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/681" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/691" alt="">
+        </figure>
+      </div>
+    </content-visibility>
+
+
+    <p>Perferendis accusamus asperiores nihil repudiandae, dignissimos sint natus, cumque consectetur maxime ducimus
+      voluptates, nesciunt repellat! Rerum in totam voluptatibus quidem numquam perspiciatis fugiat delectus
+      laboriosam praesentium explicabo, officiis, magnam perferendis?</p>
+
+    <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, nemo veritatis.</blockquote>
+
+    <p>Corporis deleniti consequuntur corrupti dolor sit tempora assumenda, quia quos modi aliquam, ex exercitationem
+      asperiores est magni iste repellendus voluptatibus, alias maxime? Amet nostrum voluptates nam odio eius
+      reprehenderit accusantium!</p>
+    <content-visibility>
+      <div class="grid-2">
+        <figure>
+          <img src="https://source.unsplash.com/random/603" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/604" alt="">
+          <figcaption>Facilis nesciunt perferendis porro incidunt, doloremque debitis deleniti blanditiis eum ab fuga
+            magnam asperiores provident.</figcaption>
+        </figure>
+      </div>
+    </content-visibility>
+
+    <content-visibility>
+      <div class="p-group-flex">
+
+        <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere
+          ratione ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident
+          beatae. Temporibus, eum!</p>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+          inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus
+          ea totam?</p>
+      </div>
+    </content-visibility>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1602x950" alt="">
+      <figcaption><a href="#">Lorem ipsum</a> dolor sit amet consectetur, adipisicing elit. Doloremque, praesentium.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1234x640" alt="">
+      <figcaption>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <a href="#">Doloremque</a>, praesentium.
+      </figcaption>
+    </figure>
+
+    <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
+      ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis
+      inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
+      totam?</p>
+
+    <figure>
+      <img src="https://source.unsplash.com/random/1601x900" alt="">
+      <figcaption><a href="#">Lorem ipsum</a> dolor sit amet consectetur, adipisicing elit. Doloremque, praesentium.
+      </figcaption>
+    </figure>
+
+    <content-visibility>
+      <div class="grid-3">
+        <figure>
+          <img src="https://source.unsplash.com/random/452" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/453" alt="">
+        </figure>
+        <figure>
+          <img src="https://source.unsplash.com/random/451" alt="">
+        </figure>
+      </div>
+    </content-visibility>
+
+  </article>
+
+  <footer>
+    Footer. Thank you!
+  </footer>
 </body>
 
 </html>
