@@ -11,13 +11,16 @@ CSS `content-visibility` is supported on Chrome 85+, Chrome Android 85+ and Oper
 **Intersection Observer API** supports pretty much all browsers except **IE**, thus an intersection observer polyfill is included. [IntersectionObserver polyfill](https://www.npmjs.com/package/intersection-observer)
 
 # Compatibility
-
-<img src="./images/chrome_128x128.png" alt="Chrome" widht="30" height="30">
-<img src="./images/safari_128x128.png" alt="Safari" widht="30" height="30">
-<img src="./images/edge_128x128.png" alt="Edge" widht="30" height="30">
-<img src="./images/internet-explorer_128x128.png" alt="IE" widht="30" height="30">
-<img src="./images/firefox_128x128.png" alt="Firefox" widht="30" height="30">
-<img src="./images/opera_128x128.png" alt="Opera" widht="30" height="30">
+<table>
+  <tr>
+    <td valign="top"><img src="./images/chrome_128x128.png" alt="Chrome" widht="30" height="30"></td>
+    <td valign="top"><img src="./images/safari_128x128.png" alt="Safari" widht="30" height="30"></td>
+    <td valign="top"><img src="./images/edge_128x128.png" alt="Edge" widht="30" height="30"></td>
+    <td valign="top"><img src="./images/internet-explorer_128x128.png" alt="IE" widht="30" height="30"></td>
+    <td valign="top"><img src="./images/firefox_128x128.png" alt="Firefox" widht="30" height="30"></td>
+    <td valign="top"><img src="./images/opera_128x128.png" alt="Opera" widht="30" height="30"></td>
+  </tr>
+</table>
 
 # What it does
 
