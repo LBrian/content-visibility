@@ -91,7 +91,9 @@ export class ContentVisibility extends LitElement {
     super.firstUpdated(changedProperties);
 
     if (this.observer) {
-      this.observer.observe(this.renderRoot.children[0]);
+      const container = this.renderRoot.children[0];
+
+      container && this.observer.observe(container);
     }
   }
 
@@ -99,7 +101,9 @@ export class ContentVisibility extends LitElement {
     super.disconnectedCallback();
 
     if (this.observer) {
-      this.observer.unobserve(this.renderRoot.children[0]);
+      const container = this.renderRoot.children[0];
+
+      container && this.observer.unobserve(container);
       this.observer.disconnect();
     }
   }
