@@ -111,7 +111,7 @@ export class ContentVisibility extends LitElement {
       window.CSS?.supports('--contain-intrinsic-size: 0')
         ? `--contain-intrinsic-size: ${this.containIntrinsicSize}`
         : !this.inView
-        ? `height: ${this.containIntrinsicSize}`
+        ? `height: ${this.containIntrinsicSize || 0}`
         : ''}"
     >
       ${this.inView ? html`<slot></slot>` : ''}
