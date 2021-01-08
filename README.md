@@ -63,41 +63,43 @@ This is will be set as CSS custom variable for `contain-intrinsic-size` if brows
 </content-visibility>
 ```
 
-# Performance comparison
+# Performance results
 
-Overall `40%~50%` rendering time reduced on the three major desktop browsers from our testing.
+## Rendering frames
 
-## Chrome 87.0.4280.141
+**Safari** comes with `Rendering Frames Timeline` tool helps to measure rendering performance. Let's have a look the rendering frames **without** `<content-visibility>`, total `97` rendering frames happened on the first view.
+![Rendering Frames - no content-visibility](./images/no-content-visibility.gif?raw=true)
+
+Only `47` rendering frames happened on the first view after integrated with `<content-visibility>`
+![Rendering Frames - content-visibility](./images/content-visibility-frames.gif?raw=true)
+the rest of `50` rendering frames happened when **scorlling to the viewport**
+![Rendering Frames - content-visibility scroll](./images/content-visibility-frames-2.gif?raw=true)
+
+## Rendering & Layout time
+
+Generally speaking, we can plausibly say rendering & layout time improved around `40%`, however benchmark results vary depends on sampling size, environments, tools, implementation and etc. Too many factors could impact benchmark results, so this is just a quick sample results to demonstrate the performance differences.
+
+### Chrome 87.0.4280.141
 
 CSS `content-visibility` and `contain-intrinsic-size`
 
-### Before
+#### Before
 
 ![Chrome Before](./images/chrome-before.png?raw=true)
 
-### After
+#### After
 
 **Rendering** and **Painting** time reduced around `50%`.
 
 ![Chrome After](./images/chrome-after.png?raw=true)
 
-## Safari 14.0.1
+### Firefox 84.0.2
 
-### Before
-
-![Safari Before](./images/safari-before.png?raw=true)
-
-### After
-
-![Safari After](./images/safari-after.png?raw=true)
-
-## Firefox 84.0.2
-
-### Before
+#### Before
 
 ![Firefox Before](./images/firefox-before.png?raw=true)
 
-### After
+#### After
 
 ![Firefox After](./images/firefox-after.png?raw=true)
 
