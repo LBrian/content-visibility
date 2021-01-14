@@ -1,5 +1,6 @@
 # content-visibility <img src="./images/webcomponent_192x192.png" alt="Chrome" widht="20" height="20">
 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/content-visibility)
 ![npm 7.0.15](https://img.shields.io/badge/npm-7.0.15-blue)
 ![Typescript](https://img.shields.io/badge/typescript-4.1.3-blue)
 ![Lit-Element](https://img.shields.io/badge/LitElement-2.3.1-blue)
