@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>&lt;content-visibility> Demo</title>
   <script type="module" src="../content-visibility.js"></script>
+  <script type="module" src="../content-visibility-template.js"></script>
   <style>
     html {
       font-size: 20px;
@@ -157,12 +158,10 @@
   <article>
     <h1>The Ultimate Weekend Road Trip Guide</h1>
 
-    <content-visibility>
-      <figure class="hero">
-        <img src="https://source.unsplash.com/1600x980" alt="">
-        <figcaption>This Demo Uses Images from the <a href="https://unsplash.com">Unsplash</a> API.</figcaption>
-      </figure>
-    </content-visibility>
+    <figure class="hero">
+      <img src="https://source.unsplash.com/1600x980" alt="">
+      <figcaption>This Demo Uses Images from the <a href="https://unsplash.com">Unsplash</a> API.</figcaption>
+    </figure>
 
     <p class="leading">Atque similique quia eos cupiditate, repellat quibusdam rerum, facilis quisquam eius beatae
       omnis excepturi. Sint, qui doloremque sit voluptate quis voluptatum, distinctio sunt eaque voluptas placeat
@@ -214,7 +213,7 @@
       omnis excepturi. Sint, qui doloremque sit voluptate quis voluptatum, distinctio sunt eaque voluptas placeat
       praesentium amet error nostrum!</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-2">
         <figure>
           <img src="https://source.unsplash.com/random/620" alt="">
@@ -227,7 +226,7 @@
             magnam asperiores provident.</figcaption>
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <figure>
       <img src="https://source.unsplash.com/random/800x400" alt="">
@@ -267,7 +266,7 @@
       nostrum dolorum nesciunt earum amet dicta repellat ad vitae, laudantium iste assumenda fuga mollitia nobis,
       consequatur adipisci?</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="p-group-flex">
         <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, facere ratione ipsum id
           cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.</p>
@@ -275,12 +274,12 @@
           inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus
           ea totam?</p>
       </div>
-    </content-visibility>
+    </template>
     <p>Velit ipsum eum quos? Voluptatum, quidem veniam repellat rerum impedit ducimus! <b>Provident perferendis</b>,
       nostrum dolorum nesciunt earum amet dicta repellat ad vitae, laudantium iste assumenda fuga mollitia nobis,
       consequatur adipisci?</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-3">
         <figure>
           <img src="https://source.unsplash.com/random/650" alt="">
@@ -301,7 +300,7 @@
           <img src="https://source.unsplash.com/random/550" alt="">
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <figure>
       <img src="https://source.unsplash.com/random/1200x600" alt="">
@@ -326,7 +325,7 @@
 
     <h2>Choose your travel partners wisely</h2>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-2">
         <figure>
           <img src="https://source.unsplash.com/random/670" alt="">
@@ -339,7 +338,7 @@
             magnam asperiores provident.</figcaption>
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
       ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.
@@ -349,7 +348,7 @@
       inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
       totam?</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-3">
         <figure>
           <img src="https://source.unsplash.com/random/300" alt="">
@@ -361,7 +360,7 @@
           <img src="https://source.unsplash.com/random/302" alt="">
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <figure>
       <img src="https://source.unsplash.com/random/1600x910" alt="">
@@ -395,7 +394,7 @@
       </figcaption>
     </figure>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-3">
         <figure>
           <img src="https://source.unsplash.com/random/650" alt="">
@@ -407,7 +406,7 @@
           <img src="https://source.unsplash.com/random/690" alt="">
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
 
     <p>Perferendis accusamus asperiores nihil repudiandae, dignissimos sint natus, cumque consectetur maxime ducimus
@@ -422,7 +421,7 @@
       asperiores est magni iste repellendus voluptatibus, alias maxime? Amet nostrum voluptates nam odio eius
       reprehenderit accusantium!</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-2">
         <figure>
           <img src="https://source.unsplash.com/random/530" alt="">
@@ -435,9 +434,9 @@
             magnam asperiores provident.</figcaption>
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="p-group-flex">
 
         <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere
@@ -448,7 +447,7 @@
           inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus
           ea totam?</p>
       </div>
-    </content-visibility>
+    </template>
 
     <figure>
       <img src="https://source.unsplash.com/random/1600x950" alt="">
@@ -475,7 +474,7 @@
       <figcaption><a href="#">Lorem ipsum</a> dolor sit amet consectetur, adipisicing elit. Doloremque, praesentium.
       </figcaption>
     </figure>
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-3">
         <figure>
           <img src="https://source.unsplash.com/random/450" alt="">
@@ -487,7 +486,7 @@
           <img src="https://source.unsplash.com/random/450" alt="">
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
       ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.</p>
@@ -496,7 +495,7 @@
       inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
       totam?</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="p-group-flex">
         <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, facere ratione ipsum id
           cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.</p>
@@ -504,13 +503,13 @@
           inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus
           ea totam?</p>
       </div>
-    </content-visibility>
+    </template>
 
     <p>Velit ipsum eum quos? Voluptatum, quidem veniam repellat rerum impedit ducimus! <b>Provident perferendis</b>,
       nostrum dolorum nesciunt earum amet dicta repellat ad vitae, laudantium iste assumenda fuga mollitia nobis,
       consequatur adipisci?</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-3">
         <figure>
           <img src="https://source.unsplash.com/random/650" alt="">
@@ -531,7 +530,7 @@
           <img src="https://source.unsplash.com/random/550" alt="">
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <figure>
       <img src="https://source.unsplash.com/random/1200x700" alt="">
@@ -554,7 +553,7 @@
       ipsum dolor, sit amet consectetur adipisicing elit. Asperiores placeat corrupti vel harum. Omnis inventore, eum
       quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea totam?</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-2">
         <figure>
           <img src="https://source.unsplash.com/random/621" alt="">
@@ -567,7 +566,7 @@
             magnam asperiores provident.</figcaption>
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <p>Recusandae, eveniet? Pariatur voluptatibus voluptatem ad aut iusto rem officia eum, repudiandae facere ratione
       ipsum id cumque molestias placeat laboriosam quis iure excepturi suscipit quia maiores, provident beatae.
@@ -577,7 +576,7 @@
       inventore, eum quo obcaecati at iusto voluptate explicabo soluta, nisi quisquam asperiores ratione, possimus ea
       totam?</p>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-3">
         <figure>
           <img src="https://source.unsplash.com/random/611" alt="">
@@ -589,7 +588,7 @@
           <img src="https://source.unsplash.com/random/610" alt="">
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <figure>
       <img src="https://source.unsplash.com/random/1620x910" alt="">
@@ -622,7 +621,7 @@
       </figcaption>
     </figure>
 
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-3">
         <figure>
           <img src="https://source.unsplash.com/random/689" alt="">
@@ -634,7 +633,7 @@
           <img src="https://source.unsplash.com/random/691" alt="">
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
 
     <p>Perferendis accusamus asperiores nihil repudiandae, dignissimos sint natus, cumque consectetur maxime ducimus
@@ -646,7 +645,7 @@
     <p>Corporis deleniti consequuntur corrupti dolor sit tempora assumenda, quia quos modi aliquam, ex exercitationem
       asperiores est magni iste repellendus voluptatibus, alias maxime? Amet nostrum voluptates nam odio eius
       reprehenderit accusantium!</p>
-    <content-visibility>
+    <template is="content-visibility-template">
       <div class="grid-2">
         <figure>
           <img src="https://source.unsplash.com/random/603" alt="">
@@ -659,7 +658,7 @@
             magnam asperiores provident.</figcaption>
         </figure>
       </div>
-    </content-visibility>
+    </template>
 
     <content-visibility>
       <div class="p-group-flex">
@@ -714,10 +713,6 @@
     </content-visibility>
 
   </article>
-
-  <footer>
-    Footer. Thank you!
-  </footer>
 </body>
 
 </html>

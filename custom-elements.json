@@ -2,9 +2,24 @@
   "version": "experimental",
   "tags": [
     {
+      "name": "content-visibility-template",
+      "path": "./src/content-visibility-template.ts",
+      "properties": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "default": "\"[0]\""
+        },
+        {
+          "name": "containIntrinsicSize",
+          "type": "string",
+          "default": "\"[600px]\""
+        }
+      ]
+    },
+    {
       "name": "content-visibility",
       "path": "./src/content-visibility.ts",
-      "description": "content-visibility, a web component leverages CSS content-visibility and the\nIntersection Observer API to provide cross browsers content-visibility solution.",
       "attributes": [
         {
           "name": "containIntrinsicSize",

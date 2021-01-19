@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "clean": "rimraf content-visibility.{d.ts,d.ts.map,js,js.map} test/content-visibility.{d.ts,d.ts.map,js,js.map} test/content-visibility_test.{d.ts,d.ts.map,js,js.map}",
+    "clean": "rimraf content-visibility*.{d.ts,d.ts.map,js,js.map} test/content-visibility.{d.ts,d.ts.map,js,js.map} test/content-visibility_test.{d.ts,d.ts.map,js,js.map}",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
     "lint:lit-analyzer": "lit-analyzer",
@@ -48,6 +48,8 @@
   "license": "MIT",
   "dependencies": {
     "@types/react": "^17.0.0",
+    "@ungap/custom-elements": "^0.1.10",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
     "intersection-observer": "^0.7.0",
     "lit-element": "^2.3.1"
   },

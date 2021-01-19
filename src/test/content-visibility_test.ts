@@ -1,12 +1,12 @@
 import { ContentVisibility } from '../content-visibility.js';
-import { fixture, html } from '@open-wc/testing';
-
-const assert = chai.assert;
+import { assert, fixture, html } from '@open-wc/testing';
 
 suite('content-visibility', () => {
   test('is defined', () => {
-    const el = document.createElement('content-visibility');
-    assert.instanceOf(el, ContentVisibility);
+    assert.instanceOf(
+      document.createElement('content-visibility'),
+      ContentVisibility
+    );
   });
 
   test('renders with default values', async () => {

@@ -11,8 +11,14 @@ import {
 } from 'lit-element';
 
 /**
- * content-visibility, a web component leverages CSS content-visibility and the
- * Intersection Observer API to provide cross browsers content-visibility solution.
+ *
+ * @author Brian YP Liu
+ * @copyright 2021 Brian YP Liu
+ *
+ * ContentVisibility, a simple web component leverages CSS content-visibility
+ * and the Intersection Observer API to provide cross browsers content-visibility
+ * solution.
+ *
  */
 @customElement('content-visibility')
 export class ContentVisibility extends LitElement {
