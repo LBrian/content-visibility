@@ -127,7 +127,13 @@ type ContentVisibilityProps = HTMLAttributes<HTMLDivElement> & {
   threshold?: number;
 };
 
-//@ts-ignore
+declare global {
+  interface HTMLElementTagNameMap {
+    'content-visibility': ContentVisibility;
+  }
+}
+
+// @ts-expect-error
 declare module 'preact' {
   namespace JSX {
     interface IntrinsicElements {
