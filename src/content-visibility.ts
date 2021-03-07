@@ -128,19 +128,19 @@ type ContentVisibilityProps = HTMLAttributes<HTMLDivElement> &
     threshold?: number;
   }>;
 
-declare namespace global.JSX {
+export declare namespace global.JSX {
   interface IntrinsicElements {
     'content-visibility': ContentVisibilityProps;
   }
 }
 
-declare namespace preact.JSX {
+export declare namespace preact.JSX {
   interface IntrinsicElements {
     'content-visibility': ContentVisibilityProps;
   }
 }
 
-declare namespace svelte.JSX {
+export declare namespace svelte.JSX {
   interface IntrinsicElements {
     'content-visibility': ContentVisibilityProps;
   }
