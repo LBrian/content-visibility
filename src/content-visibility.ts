@@ -57,7 +57,8 @@ export class ContentVisibility extends LitElement {
   threshold = 0;
 
   /**
-   * inView will only be set once to trigger component update
+   * Default inView is true when browsers support CSS content visibility, so
+   * no need to initialize IntersectionObserver but just add CSS rules.
    */
   @internalProperty()
   private inView = window.CSS?.supports('content-visibility: auto');
@@ -65,15 +66,13 @@ export class ContentVisibility extends LitElement {
   connectedCallback() {
     super.connectedCallback();
 
-    // CSS.supports method is not supported on IE and restricted syntax on Edge
-    if (!window.CSS?.supports('content-visibility: auto')) {
+    if (!this.inView) {
       this.observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (
               entry.isIntersecting &&
-              entry.target === this.renderRoot.children[0] &&
-              !this.inView
+              entry.target === this.renderRoot.children[0]
             ) {
               this.inView = true;
             }
@@ -123,18 +122,26 @@ export class ContentVisibility extends LitElement {
   }
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'content-visibility': ContentVisibility;
+type ContentVisibilityProps = HTMLAttributes<HTMLDivElement> &
+  PropsWithChildren<{
+    containIntrinsicSize?: string;
+    threshold?: number;
+  }>;
+
+declare namespace global.JSX {
+  interface IntrinsicElements {
+    'content-visibility': ContentVisibilityProps;
   }
-  // React/Preact IntrinsicElements types
-  namespace JSX {
-    interface IntrinsicElements {
-      'content-visibility': HTMLAttributes<HTMLDivElement> &
-        PropsWithChildren<{
-          containIntrinsicSize?: string;
-          threshold?: number;
-        }>;
-    }
+}
+
+declare namespace preact.JSX {
+  interface IntrinsicElements {
+    'content-visibility': ContentVisibilityProps;
+  }
+}
+
+declare namespace svelte.JSX {
+  interface IntrinsicElements {
+    'content-visibility': ContentVisibilityProps;
   }
 }
