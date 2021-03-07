@@ -122,21 +122,23 @@ export class ContentVisibility extends LitElement {
   }
 }
 
-type ContentVisibilityProps = HTMLAttributes<HTMLDivElement> &
-  PropsWithChildren<{
-    containIntrinsicSize?: string;
-    threshold?: number;
-  }>;
+type ContentVisibilityProps = HTMLAttributes<HTMLDivElement> & {
+  containIntrinsicSize?: string;
+  threshold?: number;
+};
 
-export declare namespace global.JSX {
-  interface IntrinsicElements {
-    'content-visibility': ContentVisibilityProps;
+//@ts-ignore
+declare module 'preact' {
+  namespace JSX {
+    interface IntrinsicElements {
+      'content-visibility': PropsWithChildren<ContentVisibilityProps>;
+    }
   }
 }
 
-export declare namespace preact.JSX {
+export declare namespace global.JSX {
   interface IntrinsicElements {
-    'content-visibility': ContentVisibilityProps;
+    'content-visibility': PropsWithChildren<ContentVisibilityProps>;
   }
 }
 
