@@ -80,6 +80,8 @@ export class ContentVisibility extends LitElement {
         },
         { threshold: this.threshold }
       );
+
+      this.observeContainer();
     }
   }
 
@@ -89,11 +91,7 @@ export class ContentVisibility extends LitElement {
   firstUpdated(changedProperties: PropertyValues) {
     super.firstUpdated(changedProperties);
 
-    if (this.observer) {
-      const container = this.renderRoot.children[0];
-
-      container && this.observer.observe(container);
-    }
+    this.observeContainer();
   }
 
   disconnectedCallback() {
@@ -105,6 +103,7 @@ export class ContentVisibility extends LitElement {
       container && this.observer.unobserve(container);
       this.observer.disconnect();
     }
+    this.inView = window.CSS?.supports('content-visibility: auto');
   }
 
   render() {
@@ -119,6 +118,14 @@ export class ContentVisibility extends LitElement {
     >
       ${this.inView ? html`<slot></slot>` : ''}
     </div>`;
+  }
+
+  observeContainer() {
+    if (this.observer) {
+      const container = this.renderRoot.children[0];
+
+      container && this.observer.observe(container);
+    }
   }
 }
 
